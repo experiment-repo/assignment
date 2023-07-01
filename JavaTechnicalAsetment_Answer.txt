@@ -1,0 +1,159 @@
+1. Write a code snippet to filter employees from the list of Employee objects based on dept
+‘IT’.
+
+	employeeList.stream().filter(emp->emp.getDepartment() != null && emp.getDepartment().equals("IT")).collect(Collectors.toList())
+		
+
+2. How do you write unit tests in java?
+
+	We can write unit test case using junit and mockito liberary
+
+3. What is dependency injection in Spring?
+
+	Dependency injection means lossly couple the dependency creation which means depedency creation is seperated from the implementation. 
+
+4. What is the diff between @Autowired and @Required annotation?
+	@Autowired
+	The annotation @Autowired helps to inject the avialable instance in context , in default expect the instance which need to inject
+	@Required
+	the annotation @Required helps to check the state of the instance , if we mention false it will not expect the object
+
+5. What is the diff between hibernate load and get methods?
+	Both the methods help to read the data from db , Get will return null in case of data missing in the table, But Load will throw the exception in case of no data avialable
+
+6. What is the diff between singleton and prototype design patterns?
+	Singleton is create instance only one time and serving the same whenever requested for object.
+	Prototype is create new instance whenever requested for object.
+	
+7. what is the diff between final, finally and finalize()?
+	final is acess modifier
+	finally is the block which used in the exception handling
+	finalize is the method of the object class
+	
+8. Explain declaration, scriptlet and expression tags in jsp?
+	declaration - Used outside of _jspSevice method
+	scriptlet -  Used inside of _jspSevice method
+	
+9. What is the diff between var, let and const keyword in javascript?
+	var and let used to assign dynamic variable
+	const used for constants
+
+10. What is spring bean life cycle?
+	Spring bean life cycle is nothing but the stages between the bean creation and destroy.
+	mentioned below life cycle
+	Bean creation
+	BeanPostProcessorBeforIntilization
+	@postconstruct
+	afterPropertySet() methon InitializeBean class
+	custom init method
+	BeanPostProcessorAfterIntilization
+	@predestroy
+	destroy method in DisposalBean
+	custom destroy method
+	
+	
+11. When to use @Qualifier annotation?
+	Sometime we have object which have the same object type, qulifier helps to identify the specific instance
+	
+12. What are joins available in SQL?
+	inner join , let join, righ join
+13. Write a java program to print the fibbonacci series.
+
+	 int n1 = 1;
+	 int n2 = 2;
+	 System.out.print(n1+","+n2);
+	 for(int i =2; i<9 ; i++){
+	 n3 = n1+n2;
+	 System.out.print(","+n3);
+	 n1 = n2;
+	 n2 = n3;
+	 }
+	 
+
+14. How do you debug if any issue in production?
+
+	Step1 : get the logs from the production server
+	Step2: Identify any issues with software behaviour
+	step3: if no software defect check the data related to scenario
+	step3: Also check the server related issues
+15. What is the result of the below code and Why?
+	It will print "String method Invoked" beacuse it is more specific.
+	public class TestClass {
+	public static void main(String[] args) {
+	someMethod(null);
+	}
+	public static void someMethod(Object o) {
+	System.out.println("Object method Invoked");
+	}
+	public static void someMethod(String s) {
+	System.out.println("String method Invoked");
+	}
+	}	
+	
+16. What is the result of the below code?
+	true
+	false
+	public class InterviewbitProblem{
+		public static void main(String[] arr){
+		System.out.println(0.1*3 == 0.3);
+		System.out.println(0.1*2 == 0.2);
+		}
+	}
+	
+17,
+	A. How can Java be used to implement user authentication functionality in the e-commerce
+	platform?
+	Use SSO
+	
+	B. What Java frameworks or libraries can be utilized to manage and organize the product
+	catalog for the e-commerce platform?
+	Spring
+	
+	C. How can Java be leveraged to implement shopping cart functionality that allows users to add
+	and remove items?
+	Map can use 
+	
+	D. What Java APIs or third-party integrations can be used for secure payment processing within
+	the e-commerce platform?
+	Many third party available like paypal, ebay
+	
+	E. How can Java's concurrency features be utilized to ensure thread safety and efficient
+	handling of concurrent requests in the e-commerce platform?
+	Normally web frame suopport with concurent request
+	
+	F. What Java design patterns can be applied to ensure the scalability and maintainability of the
+	e-commerce platform?
+	We can use many designpattern which helping to increase or decrease reources to maintain scalability
+	
+	G. How can Java's database connectivity capabilities be used to store and retrieve customer
+	and product data in the e-commerce platform?
+	We will use shot transaction, also use cahce for more frequent access data
+	
+	H. What Java testing frameworks can be utilized to write unit tests and integration tests for the
+	various components of the e-commerce platform?
+	Junit and mockito
+	
+	I. How can Java logging and monitoring libraries be used to track and analyze system
+	performance and identify potential issues in the e-commerce platform?
+	We streaming the log to jagger
+	
+	J. What security measures should be implemented using Java to protect sensitive user
+	information and prevent common security vulnerabilities in the e-commerce platform?	
+	Use encryption to have the security information
+	
+	
+	19. What is the purpose of the struts-config.xml file in Struts?
+	Define the action and forms
+	
+	20. Explain the role of ActionForm in Struts.
+	Helps to hold the form details and validations
+	
+	21. What are the key annotations used in JPA for mapping entities to database tables?
+	@Entity, @Id, @Column , @OneMany, @ManyOne 
+	22.Explain the FetchType.LAZY and FetchType.EAGER in JPA.
+	FetchType.LAZY will help to load the data when we reading the field
+	FetchType.EAGER load all the data at first time
+	
+	23.How does Hibernate achieve Object-Relational Mapping (ORM)?
+	   We need add the confiuration in hibernate-config file which map the table and pojo field
+	   

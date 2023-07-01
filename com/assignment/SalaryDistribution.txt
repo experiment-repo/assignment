@@ -1,0 +1,30 @@
+package com.assignment;
+
+public class SalaryDistribution{
+	/** Gross salary */
+	private double grossSalary;
+	/** Tax percentage */
+	private double taxPercentage;
+	/** Professional Tax percentage */
+	private double pfPercentage;
+	
+	/**
+	  * Constructor to load require detatils
+	  * @param grossSalary Gross Salary
+	  * @param taxPercentage Tax percentage
+	  * @param pfPercentage Professional Tax percentage
+	  */
+	public SalaryDistribution(double grossSalary, double taxPercentage, double pfPercentage){
+		this.grossSalary = grossSalary; 
+		this.taxPercentage = taxPercentage;
+		this.pfPercentage = pfPercentage;
+	}
+	
+	/**
+	  * Calculte salary 
+	  * @return salary
+	  */
+	public double calculateSalary(){
+		return this.grossSalary - (this.grossSalary * this.taxPercentage) - (this.grossSalary * this.pfPercentage);
+	}
+}

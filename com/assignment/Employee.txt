@@ -1,0 +1,67 @@
+package com.assignment;
+
+/** This class hold the employee information*/
+public class Employee{
+	/** Employeee Id */
+	private Integer id;
+	/** Employeee Name */
+	private String name;
+	/** Employeee job level or band */
+	private Integer jobLevel;
+	/** Employeee email */
+	private String email;	
+	/** Employeee salary */
+	private double salary;
+	
+	public Employee(){
+		// Empty constructor
+	}
+	
+	public Employee(Integer id, String name, Integer jobLevel, String email){
+		this.id = id;
+		this.name = name;
+		this.jobLevel = jobLevel;
+		this.email = email;
+	}
+	
+	public Integer getId(){
+		return this.id;
+	}
+	
+	public void setId(Integer id){
+		this.id = id;
+	}
+	
+	public Integer getName(){
+		return this.name;
+	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public Integer getEmail(){
+		return this.email;
+	}
+	
+	public void setEmail(String email){
+		this.email = email;
+	}
+	
+	public Integer getJobLevel(){
+		return this.jobLevel;
+	}
+	
+	public void setJobLevel(Integer jobLevel){
+		this.jobLevel = jobLevel;
+	}
+	
+	public Double getSalary(){
+		return this.salary;
+	}
+	
+	public void setSalary(Double salary){
+		this.salary = salary;
+	}
+	
+}

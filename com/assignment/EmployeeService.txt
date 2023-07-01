@@ -1,0 +1,23 @@
+package com.assignment;
+
+public interface EmployeeService{
+	/**
+	 * Save the employee details
+	 * @param employee Employee
+	 */
+	public void addEmployee(Employee employee);
+	/**
+	 * Get the employee details by given id
+	 * @param id Employee Id
+	 * @return Employee Details
+	 */
+	public Employee getEmployee(Integer id);
+	
+	/**
+	 * Get the employee details with salaray by given id
+	 * @param id Employee Id
+	 * @return Employee Details
+	 */
+	public Employee retrieveSalary(Integer id);
+
+}

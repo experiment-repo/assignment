@@ -1,0 +1,23 @@
+package com.assignment;
+
+import org.mysql.Driver;
+
+public class ConnectionFactory{
+	private static final string URL = "jdbc:mysql:localhost:3306/employee_schema";
+	private static final string USER_NAME = "USER_NAME";
+	private static final string PASSWORD = "PASSWORD";
+
+	public static Connection getConnection(){
+		Connection conn;
+		try{
+			DriverManager.registerDriver(new Driver());
+			conn = DriverManager.createConnection(URL, USER_NAME, PASSWORD);
+			return conn;
+		}catch(SQLException sqlException){
+			throw RuntimeException("Error while connect the DB", sqlException);
+		}
+		
+		return conn;
+	}
+
+}

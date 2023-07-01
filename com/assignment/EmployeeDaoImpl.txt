@@ -1,0 +1,42 @@
+package com.assignment;
+
+import org.sql.PreparedStatemet;
+import org.sql.ResultSet;
+
+public interface EmployeeDaoImpl implements EmployeeDao{
+
+	@override
+	public void saveEmployee(Employee employee){
+		try{
+			PreparedStatement stmt = ConnectionFactory.getConnection().createPreparedStatement("Insert into employee(name,email,job_level) values(?,?,?)");
+			stmt.setString(1, employee.getName());
+			stmt.setString(2, employee.getEmail());
+			stmt.setInteger(3, employee.getJobLevel());
+			stmt.executeUpdate();
+		}catch(Exception ex){
+			throw RunetimeException("Error while saving employee details", ex);
+		}
+
+	}
+	
+	@override
+	public Employee getEmployee(Integer id){
+		Employee emp = null;
+		try{
+			PreparedStatement stmt = ConnectionFactory.getConnection().createPreparedStatement("select id,name,email,job_level where id = ?");
+			stmt.setInteger(1, id);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()){
+				emp = new Employee();
+				emp.setId(rs.getInt(1));
+				emp.setName(rs.getString(2));
+				emp.setEmail(rs.getString(3));
+				emp.setJobLevel(rs.getInt(4));
+			}
+			return emp;
+		}catch(Exception ex){
+			throw RunetimeException("Error while saving employee details", ex);
+		}
+	}
+
+}

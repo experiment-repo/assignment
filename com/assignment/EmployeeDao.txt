@@ -1,0 +1,17 @@
+package com.assignment;
+
+public interface EmployeeDao{
+	/**
+	 * Save the employee details
+	 * @param employee Employee
+	 */
+	public void saveEmployee(Employee employee);
+	
+	/**
+	 * Get the employee details by given id
+	 * @param id Employee Id
+	 * @return Employee Details
+	 */
+	public Employee getEmployee(Integer id);
+
+}

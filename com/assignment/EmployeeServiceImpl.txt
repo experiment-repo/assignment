@@ -1,0 +1,60 @@
+package com.assignment;
+
+public EmployeeServieImpl implements EmployeeService{
+
+	Logger logger = LogFactory.logger(EmployeeServieImpl.class);
+	
+	/** Instance of employee DAO */
+	private EmployeeDao employeeDao;
+	
+	/** Salary map for jab level */
+	private Map<Integer,SalaryDistribution> salaryMap = new HashMap<>();
+	
+	
+	/** Constructor to load the required data*/
+	public EmployeeServieImpl(){
+		// we can inject the dependency if use spring
+		employeeDao = new EmployeeDaoImpl();
+		// This map can load it from DB also
+		salaryMap.put(1, new SalaryDistribution(10000,5,5);
+		salaryMap.put(2, new SalaryDistribution(15000,5,5);
+		salaryMap.put(3, new SalaryDistribution(20000,5,10);
+		salaryMap.put(4, new SalaryDistribution(25000,10,10);
+	}
+
+	@override
+	public void addEmployee(Employee employee){
+		logger.debug("Strat add employee method")
+		try{
+			employeeDao.saveEmployee(employee);
+		}catch(Exceptioin ex){
+			logger.error("Error while add employee", ex)
+		}		
+	}
+
+	@override
+	public Employee getEmployee(Integer id){
+		logger.debug("Strat get employee method")
+		try{
+			Employee employee = employeeDao.getEmployee(id);
+			return employee;
+		}catch(Exceptioin ex){
+			logger.error("Error while get employee", ex)
+		}
+	}
+
+	@override
+	public Employee retrieveSalary(Integer id){
+		logger.debug("Strat retrieve employee salary method")
+		try{
+			Employee employee = getEmployee( id);
+			if(salaryMap.containsKey(employee.getJobLevel())){
+				employee.setSalary(salaryMap.get(employee.getJobLevel()).getSalary());
+			}
+			return employee;
+		}catch(Exceptioin ex){
+			logger.error("Error while retrieve employee salary", ex)
+		}
+	}
+
+}
